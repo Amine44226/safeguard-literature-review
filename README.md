@@ -13,8 +13,8 @@ Browse online: https://amine44226.github.io/safeguard-literature-review/
 | 3. Document type | [step3.html](https://amine44226.github.io/safeguard-literature-review/step3.html) | 1,259 |
 | 4. Venue | [step4.html](https://amine44226.github.io/safeguard-literature-review/step4.html) | 830 |
 | 5. Title and abstract | [step5.html](https://amine44226.github.io/safeguard-literature-review/step5.html) | 764 |
-| 6. Selection per question | [step6.html](https://amine44226.github.io/safeguard-literature-review/step6.html) | 95 |
-| 7. Quality assessment | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 57 |
+| 6. Selection per question | [step6.html](https://amine44226.github.io/safeguard-literature-review/step6.html) | 90 |
+| 7. Quality assessment | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 56 |
 
 All studies with filters: [explorer.html](https://amine44226.github.io/safeguard-literature-review/explorer.html)
 

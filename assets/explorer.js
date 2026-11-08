@@ -21,7 +21,6 @@ var Explorer = (function () {
     st: {label: "Searches", get: function (p) { return p.st.join(" "); }, html: function (p) { return chips(p.st); }},
     el: {label: "Record type", get: function (p) { return p.el; }},
     vr: {label: "Venue rank", get: function (p) { return p.vr; }},
-    sc: {label: "Screening", get: function (p) { return p.sc; }},
     rq6: {label: "Questions (step 6)", get: function (p) { return p.rq6.join(" "); }, html: function (p) { return chips(p.rq6); }},
     qs: {label: "Quality score", cls: "num", get: function (p) { return p.qs === "" ? -1 : +p.qs; }, html: function (p) { return esc(p.qs); }},
     qb: {label: "Quality", get: function (p) { return p.qb; }},
@@ -34,12 +33,12 @@ var Explorer = (function () {
     2: ["id", "t", "y", "v", "db", "st", "d"],
     3: ["id", "t", "y", "v", "el", "d"],
     4: ["id", "t", "y", "v", "vr", "d"],
-    5: ["id", "t", "y", "v", "sc", "d"],
-    6: ["id", "t", "y", "sc", "rq6", "d"],
+    5: ["id", "t", "y", "v", "d"],
+    6: ["id", "t", "y", "rq6", "d"],
     7: ["id", "t", "y", "qs", "qb", "rq7", "d"],
-    0: ["id", "t", "y", "st", "vr", "sc", "rq6", "qb", "rq7", "reach", "left", "d"]
+    0: ["id", "t", "y", "st", "vr", "rq6", "qb", "rq7", "reach", "left", "d"]
   };
-  var REMOVED = {3: ["left"], 4: ["left"], 5: ["sc", "left"], 6: ["rq6", "left"], 7: ["qs", "qb", "left"]};
+  var REMOVED = {3: ["left"], 4: ["left"], 5: ["left"], 6: ["rq6", "left"], 7: ["qs", "qb", "left"]};
 
   function reach(p) { var n = 2; for (var k = 3; k <= 7; k++) if (p["s" + k]) n = k; return n; }
   function inStep(p, n) { return n <= 2 ? true : !!p["s" + n]; }
@@ -59,7 +58,6 @@ var Explorer = (function () {
       ["db", "Database", function (p) { return p.db; }],
       ["el", "Record type", function (p) { return p.el; }],
       ["vr", "Venue rank", function (p) { return p.vr; }],
-      ["sc", "Screening", function (p) { return p.sc; }],
       ["rq6", "Question (step 6)", function (p) { return p.rq6; }],
       ["rq7", "Question (final)", function (p) { return p.rq7; }],
       ["qb", "Quality", function (p) { return p.qb; }],
