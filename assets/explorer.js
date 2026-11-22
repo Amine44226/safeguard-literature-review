@@ -1,7 +1,7 @@
 
 var Explorer = (function () {
   var STEPS = {1: "Search", 2: "Duplicates", 3: "Document type", 4: "Venue", 5: "Title and abstract",
-               6: "Selection per question", 7: "Quality assessment"};
+               6: "Selection per question", 7: "Full text and quality"};
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
     return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
   function chips(a) { return (a || []).map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join(""); }

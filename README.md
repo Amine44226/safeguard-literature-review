@@ -15,8 +15,8 @@ Review protocol: [protocol.html](https://amine44226.github.io/safeguard-literatu
 | 3. Document type | [step3.html](https://amine44226.github.io/safeguard-literature-review/step3.html) | 1,259 |
 | 4. Venue | [step4.html](https://amine44226.github.io/safeguard-literature-review/step4.html) | 830 |
 | 5. Title and abstract | [step5.html](https://amine44226.github.io/safeguard-literature-review/step5.html) | 694 |
-| 6. Selection per question | [step6.html](https://amine44226.github.io/safeguard-literature-review/step6.html) | 87 |
-| 7. Full text and quality | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 51 |
+| 6. Selection per question | [step6.html](https://amine44226.github.io/safeguard-literature-review/step6.html) | 93 |
+| 7. Full text and quality | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 47 |
 
 All studies with filters: [explorer.html](https://amine44226.github.io/safeguard-literature-review/explorer.html)
 
