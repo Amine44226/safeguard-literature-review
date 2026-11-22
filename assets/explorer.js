@@ -123,6 +123,16 @@ var Explorer = (function () {
     });
     var rm = document.getElementById("rm");
     if (rm) rm.onchange = function () { state.removed = rm.checked; state.page = 0; draw(); };
+    // a link can open the page already filtered, e.g. step1.html?st=A&db=Scopus
+    var params = new URLSearchParams(window.location.search);
+    Array.prototype.forEach.call(app.querySelectorAll("select"), function (s) {
+      var v = params.get(s.getAttribute("data-k"));
+      if (v !== null && Array.prototype.some.call(s.options, function (o) { return o.value === v; })) {
+        s.value = v; state.f[s.getAttribute("data-k")] = v;
+      }
+    });
+    if (params.get("q")) { state.q = params.get("q"); document.getElementById("q").value = state.q; }
+    if (rm && params.get("removed") === "1") { rm.checked = true; state.removed = true; }
     document.getElementById("csv").onclick = function () {
       var c = cols(), r = rows();
       var lines = [c.map(function (k) { return COLS[k].label; })].concat(r.map(function (p) {
