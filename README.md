@@ -6,7 +6,9 @@ psychological correlates and artificial intelligence*, part of the SAFEGUARD doc
 
 Browse online: https://amine44226.github.io/safeguard-literature-review/
 
-| Step | Page | Studies left |
+Review protocol: [protocol.html](https://amine44226.github.io/safeguard-literature-review/protocol.html)
+
+| Step | Page | Left |
 |---|---|---|
 | 1. Search | [step1.html](https://amine44226.github.io/safeguard-literature-review/step1.html) | 4,520 results |
 | 2. Duplicates | [step2.html](https://amine44226.github.io/safeguard-literature-review/step2.html) | 1,447 |
@@ -14,10 +16,11 @@ Browse online: https://amine44226.github.io/safeguard-literature-review/
 | 4. Venue | [step4.html](https://amine44226.github.io/safeguard-literature-review/step4.html) | 830 |
 | 5. Title and abstract | [step5.html](https://amine44226.github.io/safeguard-literature-review/step5.html) | 694 |
 | 6. Selection per question | [step6.html](https://amine44226.github.io/safeguard-literature-review/step6.html) | 89 |
-| 7. Quality assessment | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 53 |
+| 7. Full text and quality | [step7.html](https://amine44226.github.io/safeguard-literature-review/step7.html) | 52 |
 
 All studies with filters: [explorer.html](https://amine44226.github.io/safeguard-literature-review/explorer.html)
 
 The pages hold bibliographic details, decisions and quality scores only. Abstracts and full texts are
 not included; each study links to its DOI. The same data are in `data/studies.csv` and
-`data/search_results.csv`.
+`data/search_results.csv`. The pages are generated from the review data by
+`toolkit/build_review_explorers.py`.
