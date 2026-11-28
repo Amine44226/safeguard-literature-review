@@ -498,13 +498,13 @@ var App = (function () {
     var app = $("#app"), T;
     var html = '<p class="kicker rise">All studies</p><h1 class="rise">' + fmt(P.length) + ' studies, <span class="dim">one journey each</span></h1>' +
       '<p class="sub rise">Every study found by the search, the last step it passed and why it left. Click a bar or combine the filters to find any group.</p>' + rail(0);
-    html += card("Where the studies stopped", "Last selection step each study passed. Click a bar to list those studies.", '<div id="c1"></div>');
+    html += card("Where each study left", "Each study is counted once, at the step where it was removed. Together the bars add up to all 1,447. Click a bar to list those studies.", '<div id="c1"></div>');
     html += '<section class="card rise" id="list"><div class="head"><h2>The studies</h2><p>Search, filter, sort and download.</p></div><div id="tbl"></div></section>';
     app.innerHTML = html;
     T = table($("#tbl"), 0);
     var m = count(P, function (p) { return String(reach(p)); });
-    var label = {"2": "Step 2 · removed at step 3", "3": "Step 3 · removed at step 4", "4": "Step 4 · removed at step 5",
-                 "5": "Step 5 · removed at step 6", "6": "Step 6 · removed at step 7", "7": "Step 7 · included"};
+    var label = {"2": "Removed at step 3 · document type", "3": "Removed at step 4 · venue", "4": "Removed at step 5 · title and abstract",
+                 "5": "Removed at step 6 · selection per question", "6": "Removed at step 7 · full text and quality", "7": "Included"};
     bars($("#c1"), ["2", "3", "4", "5", "6", "7"].map(function (k) {
       return {label: label[k], parts: [{v: m[k] || 0, cls: k === "7" ? "c-kept" : "c-removed", name: "Studies"}], click: function () { T.set({reach: k}); }}; }));
   }
