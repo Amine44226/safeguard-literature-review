@@ -24,3 +24,9 @@ The pages hold bibliographic details, decisions and quality scores only. Abstrac
 not included; each study links to its DOI. The same data are in `data/studies.csv` and
 `data/search_results.csv`. The pages are generated from the review data by
 `toolkit/build_review_explorers.py`.
+
+Columns of `studies.csv`: id, study ID; t, title; a, authors; y, year; v, venue; d, DOI; db, databases;
+st, searches (A instruments, B sensing, C artificial intelligence, D mental health and values); el, record type;
+vr, venue rank; rq6, questions kept for at step 6; qs, quality score; qb, quality band; rq7, questions in the
+final set; s3 to s7, whether the study passed steps 3 to 7; left, the step where it left and why.
+Columns of `search_results.csv`: id, study ID; db, database; st, search; f, field; t, title; y, year; d, DOI.

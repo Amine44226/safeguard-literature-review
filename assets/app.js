@@ -217,7 +217,7 @@ var App = (function () {
     rq6: {label: "Questions (step 6)", get: function (p) { return p.rq6.join(" "); }, html: function (p) { return chips(p.rq6); }},
     qs: {label: "Score", cls: "num", get: function (p) { return p.qs === "" ? -1 : +p.qs; }, html: function (p) { return esc(p.qs); }},
     qb: {label: "Quality", get: function (p) { return p.qb; }},
-    rq7: {label: "Questions", get: function (p) { return p.rq7.join(" "); }, html: function (p) { return chips(p.rq7, true); }},
+    rq7: {label: "Questions (final)", get: function (p) { return p.rq7.join(" "); }, html: function (p) { return chips(p.rq7, true); }},
     out: {label: "Outcome", get: outcome7, html: function (p) { var o = outcome7(p);
       return o === "Included" ? '<span class="chip hi">Included</span>' : '<span class="chip">' + esc(o) + "</span>"; }},
     reach: {label: "Last step passed", cls: "num", get: reach},
@@ -227,7 +227,7 @@ var App = (function () {
   var LAYOUT = {1: ["id", "db1", "st1", "f", "t", "y", "d"], 2: ["id", "t", "y", "v", "db", "st", "d"],
     3: ["id", "t", "y", "v", "el", "d"], 4: ["id", "t", "y", "v", "vr", "d"], 5: ["id", "t", "y", "v", "st", "d"],
     6: ["id", "t", "y", "rq6", "d"], 7: ["id", "t", "y", "qs", "out", "rq7", "d"],
-    0: ["id", "t", "y", "st", "vr", "rq6", "qb", "rq7", "reach", "left", "d"]};
+    0: ["id", "t", "y", "st", "vr", "rq6", "qb", "rq7", "left", "d"]};
 
   function table(node, n) {
     var all = n === 1 ? R : (n === 7 ? P.filter(function (p) { return p.s6; }) : P);
@@ -267,7 +267,7 @@ var App = (function () {
 
     function cols() {
       var c = LAYOUT[n].slice();
-      if (st.f.keep === "Removed" || st.f.keep === "All") { c = c.filter(function (k) { return k !== "d"; }); c.push("left"); }
+      if (st.f.keep === "Removed" || st.f.keep === "All") { c.splice(c.length - 1, 0, "left"); }
       if (n === 7 && st.f.out && st.f.out !== "Included") c.push("left");
       return c;
     }
@@ -476,7 +476,7 @@ var App = (function () {
           '<span class="v" data-count="' + c[s.n] + '">0</span><span class="d">' + (d ? "−" + fmt(d) : "results") + "</span></a>";
       }).join("") + "</div></section>";
     html += '<div class="tiles rise">' +
-      [[7, "sources searched"], [4, "searches, one per question"], [CFG.read, "full texts read"], [CFG.scored, "studies scored for quality"], [c[7], "studies included"]].map(function (t) {
+      [[7, "sources searched"], [4, "searches, one per question"], [CFG.read, "full texts read"], [c[7], "studies included"]].map(function (t) {
         return '<div class="tile"><div class="v" data-count="' + t[0] + '">0</div><div class="l">' + esc(t[1]) + "</div></div>"; }).join("") + "</div>";
     html += '<section class="card rise"><div class="head"><h2>The 47 included studies, by question</h2><p>Click a question to see its studies.</p></div><div class="qs">' +
       ["RQ1", "RQ2", "RQ3", "RQ4"].map(function (k) {
